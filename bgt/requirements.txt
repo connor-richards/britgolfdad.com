@@ -1,0 +1,6 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+asgiref==3.2.10
+Django==3.0.9
+sqlparse==0.2.4
+stripe

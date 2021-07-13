@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!--head tag-->
+<head>
+  <meta charset="utf-8">
+  <title>BritGolfDad</title>
+  {% include "core/shared_links.html" %}
+  {% load static %}
+</head>
+
+<!--body tag-->
+<body>
+  {% include "core/navbar.html" %}
+  <div id="bgimg">
+    <h1 id="h1align">BritGolfDad</h1>
+    <h2 id="h2align">teaching you from my garden</h2>
+  </div>
+  <div id="main-div">
+    <div class="row" style="padding-top: 25px; padding-bottom: 25px;">   
+      <div class="col-md-4">
+        <div class="container-fluid">
+          <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <img class="card-img-top" src="{% static 'images/p1.png' %}">
+            <div class="card-body text-center">
+              <h2 class="card-title">TikTok Duet Lesson</h2>
+              <!-- Load Stripe.js on your website. -->
+              <script src="https://js.stripe.com/v3"></script>
+
+              <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+              <button
+                style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+                id="checkout-button-price_1Ia8HxADY1bOVZYtYAoDULcu"
+                role="link"
+                type="button"
+              >
+                Checkout!
+              </button>
+
+              <div id="error-message"></div>
+
+              <script>
+              (function() {
+                var stripe = Stripe('pk_test_51IQFilADY1bOVZYtaXB5EJFNUV0tifadHICSS7vsaIe0m0cOvgf5h12oAQ6AlEbJbPoIwnODv4WqYm0ZG1yqV4gy00j57CsaGd');
+
+                var checkoutButton = document.getElementById('checkout-button-price_1Ia8HxADY1bOVZYtYAoDULcu');
+                checkoutButton.addEventListener('click', function () {
+                  /*
+                  * When the customer clicks on the button, redirect
+                  * them to Checkout.
+                  */
+                  stripe.redirectToCheckout({
+                    lineItems: [{price: 'price_1Ia8HxADY1bOVZYtYAoDULcu', quantity: 1}],
+                    mode: 'payment',
+                    /*
+                    * Do not rely on the redirect to the successUrl for fulfilling
+                    * purchases, customers may not always reach the success_url after
+                    * a successful payment.
+                    * Instead use one of the strategies described in
+                    * https://stripe.com/docs/payments/checkout/fulfill-orders
+                    */
+                    successUrl: 'https://www.britgolfdad.com/success',
+                    cancelUrl: 'https://www.britgolfdad.com/canceled',
+                  })
+                  .then(function (result) {
+                    if (result.error) {
+                      /*
+                      * If `redirectToCheckout` fails due to a browser or network
+                      * error, display the localized error message to your customer.
+                      */
+                      var displayError = document.getElementById('error-message');
+                      displayError.textContent = result.error.message;
+                    }
+                  });
+                });
+              })();
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="container-fluid">
+          <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <img class="card-img-top" src="{% static 'images/videochat.jpg' %}">
+            <div class="card-body text-center">
+              <h2 class="card-title">Live Online Lesson</h2>
+              <!-- Load Stripe.js on your website. -->
+              <script src="https://js.stripe.com/v3"></script>
+
+              <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+              <button
+                style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+                id="checkout-button-price_1IoJHqADY1bOVZYtzVBTrMAk"
+                role="link"
+                type="button"
+              >
+                Checkout!
+              </button>
+
+              <div id="error-message"></div>
+
+              <script>
+              (function() {
+                var stripe = Stripe('pk_test_51IQFilADY1bOVZYtaXB5EJFNUV0tifadHICSS7vsaIe0m0cOvgf5h12oAQ6AlEbJbPoIwnODv4WqYm0ZG1yqV4gy00j57CsaGd');
+
+                var checkoutButton = document.getElementById('checkout-button-price_1IoJHqADY1bOVZYtzVBTrMAk');
+                checkoutButton.addEventListener('click', function () {
+                  /*
+                  * When the customer clicks on the button, redirect
+                  * them to Checkout.
+                  */
+                  stripe.redirectToCheckout({
+                    lineItems: [{price: 'price_1IoJHqADY1bOVZYtzVBTrMAk', quantity: 1}],
+                    mode: 'payment',
+                    /*
+                    * Do not rely on the redirect to the successUrl for fulfilling
+                    * purchases, customers may not always reach the success_url after
+                    * a successful payment.
+                    * Instead use one of the strategies described in
+                    * https://stripe.com/docs/payments/checkout/fulfill-orders
+                    */
+                    successUrl: 'https://www.britgolfdad.com/success',
+                    cancelUrl: 'https://www.britgolfdad.com/canceled',
+                  })
+                  .then(function (result) {
+                    if (result.error) {
+                      /*
+                      * If `redirectToCheckout` fails due to a browser or network
+                      * error, display the localized error message to your customer.
+                      */
+                      var displayError = document.getElementById('error-message');
+                      displayError.textContent = result.error.message;
+                    }
+                  });
+                });
+              })();
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="container-fluid">
+          <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <img class="card-img-top" src="{% static 'images/wedge.jpg' %}">
+            <div class="card-body text-center">
+              <h2 class="card-title">In Person Lesson</h2>
+              <!-- Load Stripe.js on your website. -->
+              <script src="https://js.stripe.com/v3"></script>
+
+              <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+              <button
+                style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+                id="checkout-button-price_1IoJE9ADY1bOVZYt7YBcUEYq"
+                role="link"
+                type="button"
+              >
+                Checkout!
+              </button>
+
+              <div id="error-message"></div>
+
+              <script>
+              (function() {
+                var stripe = Stripe('pk_test_51IQFilADY1bOVZYtaXB5EJFNUV0tifadHICSS7vsaIe0m0cOvgf5h12oAQ6AlEbJbPoIwnODv4WqYm0ZG1yqV4gy00j57CsaGd');
+
+                var checkoutButton = document.getElementById('checkout-button-price_1IoJE9ADY1bOVZYt7YBcUEYq');
+                checkoutButton.addEventListener('click', function () {
+                  /*
+                  * When the customer clicks on the button, redirect
+                  * them to Checkout.
+                  */
+                  stripe.redirectToCheckout({
+                    lineItems: [{price: 'price_1IoJE9ADY1bOVZYt7YBcUEYq', quantity: 1}],
+                    mode: 'payment',
+                    /*
+                    * Do not rely on the redirect to the successUrl for fulfilling
+                    * purchases, customers may not always reach the success_url after
+                    * a successful payment.
+                    * Instead use one of the strategies described in
+                    * https://stripe.com/docs/payments/checkout/fulfill-orders
+                    */
+                    successUrl: 'https://www.britgolfdad.com/success',
+                    cancelUrl: 'https://www.britgolfdad.com/canceled',
+                  })
+                  .then(function (result) {
+                    if (result.error) {
+                      /*
+                      * If `redirectToCheckout` fails due to a browser or network
+                      * error, display the localized error message to your customer.
+                      */
+                      var displayError = document.getElementById('error-message');
+                      displayError.textContent = result.error.message;
+                    }
+                  });
+                });
+              })();
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer style="height:auto; background-color:lightgrey; padding: 20px;">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col">
+          <div class="card desc-box">
+            <div class="card-body">
+                <div class="card-title">
+                  Socials
+                </div>
+                <div class="card-text">
+                  <p><a href="https://www.tiktok.com/@britgolfdad">TikTok</a></p>
+                  <p><a href="https://www.youtube.com/channel/UCLPZGvrZ1Dgrfab-yyG5VYg">YouTube</a></p>
+                  <p><a href="https://www.instagram.com/britgolfdad/">Instagram</a></p>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card desc-box">
+            <div class="card-body">
+                <div class="card-title">
+                  Contact Me
+                </div>
+                <div class="card-text">
+                  <p>Email: <a href="britgolfdad@gmail.com">britgolfdad@gmail.com</a></p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </footer>
+</body>
+</html>

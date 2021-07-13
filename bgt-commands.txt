@@ -1,0 +1,9 @@
+docker build -t us.gcr.io/britgolfdad/britgolfdad:latest .
+docker run -it --net host us.gcr.io/britgolfdad/britgolfdad:latest
+gcloud auth login
+gcloud auth configure-docker us.gcr.io
+docker push us.gcr.io/britgolfdad/britgolfdad:latest
+gcloud compute instances update-container instance-1 --container-image us.gcr.io/britgolfdad/britgolfdad:latest
+docker save us.gcr.io/britgolfdad/britgolfdad:latest | gzip > bgt.docker.tgz
+scp bgt.docker.tgz <user>@<ip>:
+docker rm -f $(docker ps -aq)
